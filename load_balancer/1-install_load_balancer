@@ -10,14 +10,14 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend erneste-frontend
+frontend emmy-frontend
         bind *:80
         mode http
-        default_backend oreste-backend
-backend erneste-backend
+        default_backend emmy-backend
+backend emmy-backend
         balance roundrobin
-        server 6238-web-01 54.196.216.8:80 check
-        server 6238-web-02 98.80.15.59:80 check
+        server 6201-web-01 3.89.253.50:80 check
+        server 6201-web-02 54.173.222.197:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
